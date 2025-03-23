@@ -1,0 +1,44 @@
+
+.home {
+    height: 100vh;
+    width: 100%;
+    background-image: url('../../assets/desktop/image-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .home {
+        background-image: url('../../assets/mobile/image-header.jpg');        
+    }
+}
+
+
+.speaker1{
+    background-image: url('../../assets/desktop/pattern-circles.svg');
+    background-size: cover;
+    background-position: top  ;
+    background-repeat: no-repeat;
+}
+
+.speaker2{
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/desktop/image-speaker-zx7.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+@media (max-width: 992px) {
+    .speaker2 {
+        background-image: url('../../assets/mobile/image-speaker-zx7.jpg');
+    }
+}
