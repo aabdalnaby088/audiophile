@@ -126,21 +126,21 @@ export const categories: Category[] = [
 
 export const headphones : Product[] = [
     {
-        id: 1,
+        id: 4,
         name: 'XX99 Mark II Headphones',
         images: xx92Desktop,
 
         description: 'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.'
     }, 
     {
-        id: 2,
+        id: 3,
         name: 'XX99 Mark I Headphones',
         images: xx91Desktop,
 
         description: 'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.'
     },
     {
-        id: 3,
+        id: 2,
         name: 'XX59 Headphones',
         images: xx59Desktop,
         description:'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.'
@@ -148,13 +148,13 @@ export const headphones : Product[] = [
 ]
 export const speakers : Product[] = [
     {
-        id: 1,
+        id: 6,
         name: 'ZX9 SPEAKER',
         images: zx9,
         description: 'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.'
     }, 
     {
-        id: 2,
+        id: 5,
         name: 'ZX7 SPEAKER',
         images: zx7,
         description: 'Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.'

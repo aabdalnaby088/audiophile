@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Product } from "../constants"
 
 type ProductsProps = {
@@ -16,9 +17,9 @@ export default function Products({product, index}: ProductsProps) {
                     { index == 0 && <p className="overline-custom text-primary">NEW PRODUCT</p>}
                     <h2 className="h2-custom text-black">{product.name}</h2>
                     <p className="text-body text-gray-500">{product.description}</p>
-                    <button type="button" className="btn-1 w-fit text-sm">
+                    <Link to={`/products/${product.id}`} type="button" className="btn-1 w-fit text-sm">
                         SEE PRODUCT
-                    </button>
+                    </Link>
                     </div>
                 </div>
     )

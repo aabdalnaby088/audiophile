@@ -51,9 +51,9 @@ export default function Home() {
                         <p className="text-body">
                             Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
                         </p>
-                        <button type="button" className='w-fit max-sm:w-[200px] btn-4'>
+                        <Link to="/products/6" type="button" className='w-fit max-sm:w-[200px] btn-4'>
                             <p className="text-body tracking-widest">SEE PRODUCT</p>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -64,9 +64,9 @@ export default function Home() {
                         <h2 className='h2-custom'>
                             ZX7 SPEAKER
                         </h2>
-                        <button type="button" className='btn-2 w-fit '>
+                        <Link to={'/products/5'} type="button" className='btn-2 w-fit '>
                             <p className="text-body tracking-widest">SEE PRODUCT</p>
-                        </button>
+                        </Link>
                     </div>
                     </div>
             </section>
