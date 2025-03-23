@@ -21,9 +21,9 @@ export default function Home() {
                     <p className='text-body text-white md:w-md'>
                         Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
                     </p>
-                    <button className='btn-1 w-fit tracking-widest' type="button" >
+                    <Link to= '/products/4' className='btn-1 w-fit tracking-widest' type="button" >
                         SEE PRODUCT
-                    </button>
+                    </Link>
                 </div>
             </header>
             {/* categories section */} 
