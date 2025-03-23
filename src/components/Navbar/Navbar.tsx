@@ -26,7 +26,7 @@ export default function Navbar() {
 
     return (
             <div >
-            <div className={`font-primary w-full ${isBlackBgPage ? 'bg-black' : 'bg-transparent absolute z-50'}`}>
+            <div className={`font-primary w-full ${isBlackBgPage || toggle ? 'bg-black' : 'bg-transparent absolute z-50'}`}>
                 <nav className={`${styles.navbarStyle} py-8  max-container text-white uppercase tracking-[3px]`}>
                     <button type='button' onClick={handleToggle} className='text-2xl lg:hidden'>
                         <BsList />
