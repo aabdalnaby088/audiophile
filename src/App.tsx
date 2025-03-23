@@ -5,12 +5,14 @@ import Speakers from "./pages/Speakers"
 import Earphones from "./pages/Earphones"
 import Home from "./pages/Home/Home"
 import ProductDetails from "./pages/ProductDetails"
+import ScrollToTop from "./hooks/ScrollToTop"
 
 
 function App() {
 
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Layout />} >
         <Route index element={<Home/>}/>
