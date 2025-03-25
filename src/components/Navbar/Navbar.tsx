@@ -7,19 +7,26 @@ import Layer from '../Layer';
 import Menu from '../menu/Menu';
 import useOutSideClick from '../../hooks/useOutsideClick'
 import { useLocation } from 'react-router-dom';
+import Cart from '../Cart';
 
 export default function Navbar() {
     const [toggle, setToggle] = useState(false);
+    const [toggleCart, setToggleCart] = useState(false);
     const location = useLocation();
-    const isBlackBgPage = location?.pathname?.startsWith('/product'); 
+    const isBlackBgPage = location?.pathname?.startsWith('/product') || location?.pathname?.startsWith('/checkout'); 
     
     function handleToggle() {
         setToggle(toggle => !toggle);
     }
+    function handleToggleCart() {
+        setToggleCart(toggle => !toggle);
+    }
 
     function closeMenu(){
         setToggle(false)
+        setToggleCart(false)
     }
+
 
     const {ref} = useOutSideClick(closeMenu)
 
@@ -41,7 +48,9 @@ export default function Navbar() {
                         <li><NavLink to='/earphones'>Earphones</NavLink></li>
                     </ul>
                     <p className='text-2xl'>
+                        <button onClick={handleToggleCart}>
                         <IoCartOutline />
+                        </button>
                     </p>
                 </nav>
             </div>
@@ -51,6 +60,15 @@ export default function Navbar() {
                     <Menu />
                 </div>
             </Layer>
+            }
+            {
+                toggleCart && 
+                    <Layer>
+                    <div ref={ref}>
+                    <Cart />
+                    </div>
+                    </Layer>
+
             }
         </div>
     )

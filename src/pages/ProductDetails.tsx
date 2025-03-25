@@ -1,26 +1,44 @@
 import { useParams } from "react-router-dom"
-import { products } from "../constants"
+import {  products } from "../constants"
 import { useNavigate } from 'react-router-dom';
 import QuantityBtn from "../components/QuantityBtn";
 import ProductCard from "../components/ProductCard";
 import Categories from "../sections/Categories";
 import AudioGear from "../sections/AudioGear";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemToCart, decreaseItemQuantity, removeItemFromCart } from "../redux/cartSlice";
+import { RootState } from "../redux/store";
 export default function ProductDetails() {
+    const dispatch = useDispatch(); 
     const navigate = useNavigate();
     let {id} = useParams(); 
-
+    const cart = useSelector((state: RootState) => state.cart ); 
     const product = products[Number(id) - 1]
     if (!product) {
         return (
             <div>Product not found</div>
         )
     }
+    
+    const cartItem = cart.items.find((item) => item.product.id === product.id);
+    const isInCart = Boolean(cartItem);
+    
+    function handleAddtoCart(){
+        dispatch(addItemToCart(product))
+    }
+
+const handleDecreaseQuantity = () => {
+        dispatch(decreaseItemQuantity(product));
+    };
+
+    function handleRemoveFromCart(){
+        dispatch(removeItemFromCart(product))
+    }
 
     function handleGoBack() {
         navigate(-1);
     }
     
-    console.log(product);
     
     
     return (
@@ -39,8 +57,15 @@ export default function ProductDetails() {
                     <p className="text-body text-gray-500 lg:w-lg">{product.description}</p>
                     <p className="h6-custom">{product?.price?.toLocaleString("en-US", {style:"currency", currency:"USD"})}</p>
                     <div className="flex gap-5">
-                    <QuantityBtn/>
-                    <button type="button" className="btn-1 w-fit font-primary ">ADD TO CART</button>
+                        {
+                            isInCart ? 
+                            <>
+                            <QuantityBtn product={product} decFn= {handleDecreaseQuantity} incFn={handleAddtoCart} />
+                            <button type="button" className="btn-1 w-fit font-primary"  onClick={handleRemoveFromCart} >REMOVE FROM CART</button>
+                            </>
+                            : <button type="button" className="btn-1 w-fit font-primary"  onClick={handleAddtoCart} >ADD TO CART</button>
+                        }
+                    
                     </div>
                 </div>
             </section>
@@ -82,7 +107,7 @@ export default function ProductDetails() {
                 <div className="flex flex-col gap-14 md:gap-8 md:flex-row ">
                 {
                     product.others.map((item, index) => (
-                        <ProductCard product={item} index={index} />
+                        <ProductCard key={index} product={item} index={index} />
                     ))
                 }
                 </div>
