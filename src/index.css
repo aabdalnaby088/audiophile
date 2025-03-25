@@ -160,6 +160,31 @@ body {
   }
 }
 
+/* Label Styles */
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Text Field Styles */
+.input {
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input::placeholder {
+  color: #999999;
+}
+
+.input:focus{
+  border-color: #f28c38;
+}
+
 .overline-custom {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
@@ -188,7 +213,7 @@ body {
   --color-primary:#D87D4A; 
   --color-primaryHover: #FBAF85; 
   --color-semiBlack: #101010;
-  --color-secondary: #F1F1F1;
+  --color-secondary: #F2F2F2;
   --font-primary: "Manrope",sans-serif;
   /* --shadow-3xl: 0 10px 40px rgba(0, 0, 0, 0.1); */
 }

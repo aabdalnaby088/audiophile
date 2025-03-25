@@ -50,7 +50,7 @@ import zx7Gallery1mobile from '../assets/product-zx7-speaker/mobile/image-galler
 import zx7Gallery2mobile from '../assets/product-zx7-speaker/mobile/image-gallery-2.jpg'
 import zx7Gallery3mobile from '../assets/product-zx7-speaker/mobile/image-gallery-3.jpg'
 
-interface ProductItem {
+export interface ProductItem {
     id: number;
     slug: string;
     name: string;
@@ -86,7 +86,14 @@ interface ProductItem {
     }[];
 }
 
-
+export interface Cart {
+    quantity: number;
+    items: 
+        {
+            productQuality: number
+            product: ProductItem
+        }[]
+}
 
 
 export type Category = {
@@ -99,7 +106,7 @@ export type Category = {
 export type Product = {
     id: number;
     name: string;
-    images: string
+    images: string;
     description: string;
 }
 
